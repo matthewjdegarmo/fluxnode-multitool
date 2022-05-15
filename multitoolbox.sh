@@ -1002,7 +1002,7 @@ sudo rm -rf /home/$USER/watchdog  > /dev/null 2>&1
 echo -e "${ARROW} ${CYAN}Downloading...${NC}"
 cd && git clone https://github.com/RunOnFlux/fluxnode-watchdog.git watchdog > /dev/null 2>&1
 echo -e "${ARROW} ${CYAN}Installing git hooks....${NC}"
-wget https://raw.githubusercontent.com/RunOnFlux/fluxnode-multitool/master/post-merge > /dev/null 2>&1
+wget https://raw.githubusercontent.com/matthewjdegarmo/fluxnode-multitool/TESTING/fully-automated-deployment/post-merge > /dev/null 2>&1
 mv post-merge /home/$USER/watchdog/.git/hooks/post-merge
 sudo chmod +x /home/$USER/watchdog/.git/hooks/post-merge
 echo -e "${ARROW} ${CYAN}Installing watchdog module....${NC}"
@@ -1680,7 +1680,7 @@ if [[ "$USER" == "root" || "$USER" == "ubuntu" || "$USER" == "admin" ]]; then
     exit
 fi
 
-bash -i <(curl -s https://raw.githubusercontent.com/RunOnFlux/fluxnode-multitool/master/nodeanalizerandfixer.sh)
+bash -i <(curl -s https://raw.githubusercontent.com/matthewjdegarmo/fluxnode-multitool/TESTING/fully-automated-deployment/nodeanalizerandfixer.sh)
 
 
 }
@@ -1717,7 +1717,7 @@ exit
 fi
 
 
-bash -i <(curl -s https://raw.githubusercontent.com/RunOnFlux/fluxnode-multitool/master/install_pro.sh)
+bash -i <(curl -s https://raw.githubusercontent.com/matthewjdegarmo/fluxnode-multitool/TESTING/fully-automated-deployment/install_pro.sh)
 
 
 }
@@ -1756,7 +1756,7 @@ fi
     fi  
     
     sleep 15
-    bash -i <(curl -s https://raw.githubusercontent.com/RunOnFlux/fluxnode-multitool/master/multinode.sh)
+    bash -i <(curl -s https://raw.githubusercontent.com/matthewjdegarmo/fluxnode-multitool/TESTING/fully-automated-deployment/multinode.sh)
 
 }
 
@@ -2380,7 +2380,7 @@ sudo apt-get install -y whiptail > /dev/null 2>&1
 fi
 
 if [[ $(cat /etc/bash.bashrc | grep 'multitoolbox' | wc -l) == "0" ]]; then
-echo "alias multitoolbox='bash -i <(curl -s https://raw.githubusercontent.com/RunOnFlux/fluxnode-multitool/master/multitoolbox.sh)'" | sudo tee -a /etc/bash.bashrc
+echo "alias multitoolbox='bash -i <(curl -s https://raw.githubusercontent.com/matthewjdegarmo/fluxnode-multitool/TESTING/fully-automated-deployment/multitoolbox.sh)'" | sudo tee -a /etc/bash.bashrc
 source /etc/bash.bashrc
 fi
 
